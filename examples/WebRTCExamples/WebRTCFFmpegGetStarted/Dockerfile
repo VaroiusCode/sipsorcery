@@ -26,14 +26,14 @@ RUN apt-get update && apt-get install -y \
     libssl-dev \
     libavdevice-dev \
     libfdk-aac-dev \
-    aspnetcore-runtime-8.0 \
+    aspnetcore-runtime-9.0 \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
 EXPOSE 8081
 
 # Stage 3: Build .NET Application (Only rebuilds if source code changes)
-FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
 
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src

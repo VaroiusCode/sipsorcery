@@ -1,5 +1,5 @@
-FROM mcr.microsoft.com/dotnet/core/runtime:3.1
+FROM mcr.microsoft.com/dotnet/runtime:9.0
 
-COPY bin/Debug/netcoreapp3.1/publish/ App/
+COPY bin/Debug/net9.0/publish/ App/
 WORKDIR /App
 ENTRYPOINT ["dotnet", "sipcmdline.dll"]
